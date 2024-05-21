@@ -1,8 +1,17 @@
-const createAOrderIntoDB = async () => {};
+import { TOrder } from './order.interface';
+import { Order } from './order.model';
 
-const getAllProductsFormDB = async () => {};
+const createAnOrderIntoDB = async (orderData: TOrder) => {
+  const result = await Order.create(orderData);
+  return result;
+};
 
-export const productService = {
-  createAOrderIntoDB,
-  getAllProductsFormDB,
+const getAllOrdersFormDB = async (filter: object) => {
+  const result = await Order.find(filter);
+  return result;
+};
+
+export const orderService = {
+  createAnOrderIntoDB,
+  getAllOrdersFormDB,
 };
