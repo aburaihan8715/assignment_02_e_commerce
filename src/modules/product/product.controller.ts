@@ -16,10 +16,10 @@ const createAProduct = async (req: Request, res: Response) => {
       message: 'Product created successfully',
       data: newProduct,
     });
-  } catch (error: any) {
+  } catch (error) {
     res.status(500).json({
       success: false,
-      message: error.message || 'Something went wrong!!',
+      message: 'Something went wrong!!',
       error: error,
     });
   }
@@ -47,7 +47,21 @@ const getAProduct = async (req: Request, res: Response) => {
 };
 
 const getAllProducts = async (req: Request, res: Response) => {
-  const products = await productService.getAllProductsFormDB();
+  let filter = {};
+  if (req.query.searchTerm) {
+    const search = req.query.searchTerm;
+    const searchRegexp = new RegExp(`.*${search}.*`, 'i');
+    filter = {
+      $or: [
+        { name: { $regex: searchRegexp } },
+        { category: { $regex: searchRegexp } },
+        { description: { $regex: searchRegexp } },
+      ],
+    };
+  }
+
+  // console.log(query);
+  const products = await productService.getAllProductsFormDB(filter);
 
   try {
     res.status(200).json({
@@ -101,7 +115,7 @@ const deleteAProduct = async (req: Request, res: Response) => {
     res.status(200).json({
       success: true,
       message: 'Product deleted successfully',
-      data: deletedProduct,
+      data: null,
     });
   } catch (error) {
     res.status(500).json({

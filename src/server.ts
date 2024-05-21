@@ -2,10 +2,11 @@ import mongoose from 'mongoose';
 import app from './app';
 import config from './config';
 
+// NOTE: Need to change this database_url
 async function main() {
   try {
     const { ConnectionStates } = await mongoose.connect(
-      config.database_url_local as string,
+      config.database_url_atlas as string,
     );
 
     if (ConnectionStates.connected) {

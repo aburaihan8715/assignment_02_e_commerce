@@ -7,10 +7,10 @@ const createAOrder = async (req: Request, res: Response) => {
       message: 'Order created successfully',
       data: null,
     });
-  } catch (error: any) {
+  } catch (error) {
     res.status(500).json({
       success: false,
-      message: error.message || 'Something went wrong!!',
+      message: 'Something went wrong!!',
       error: error,
     });
   }

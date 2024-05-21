@@ -11,8 +11,8 @@ const getAProductFromDB = async (productId: string) => {
   return result;
 };
 
-const getAllProductsFormDB = async () => {
-  const result = await Product.find({});
+const getAllProductsFormDB = async (query: object) => {
+  const result = await Product.find(query);
   return result;
 };
 

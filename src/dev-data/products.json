@@ -1,0 +1,212 @@
+[
+  {
+    "name": "iPhone 13",
+    "description": "A sleek and powerful smartphone with cutting-edge features.",
+    "price": 999,
+    "category": "Electronics",
+    "tags": ["smartphone", "Apple", "iOS"],
+    "variants": [
+      {
+        "type": "Color",
+        "value": "Midnight Blue"
+      },
+      {
+        "type": "Storage Capacity",
+        "value": "256GB"
+      }
+    ],
+    "inventory": {
+      "quantity": 50,
+      "inStock": true
+    }
+  },
+  {
+    "name": "Samsung Galaxy S21",
+    "description": "High performance and advanced camera capabilities.",
+    "price": 899,
+    "category": "Electronics",
+    "tags": ["smartphone", "Samsung", "Android"],
+    "variants": [
+      {
+        "type": "Color",
+        "value": "Phantom Gray"
+      },
+      {
+        "type": "Storage Capacity",
+        "value": "128GB"
+      }
+    ],
+    "inventory": {
+      "quantity": 75,
+      "inStock": true
+    }
+  },
+  {
+    "name": "Google Pixel 6",
+    "description": "Google's latest smartphone with a unique design and pure Android experience.",
+    "price": 799,
+    "category": "Electronics",
+    "tags": ["smartphone", "Google", "Android"],
+    "variants": [
+      {
+        "type": "Color",
+        "value": "Stormy Black"
+      },
+      {
+        "type": "Storage Capacity",
+        "value": "128GB"
+      }
+    ],
+    "inventory": {
+      "quantity": 60,
+      "inStock": true
+    }
+  },
+  {
+    "name": "OnePlus 9 Pro",
+    "description": "Flagship killer with top-notch performance and design.",
+    "price": 969,
+    "category": "Electronics",
+    "tags": ["smartphone", "OnePlus", "Android"],
+    "variants": [
+      {
+        "type": "Color",
+        "value": "Pine Green"
+      },
+      {
+        "type": "Storage Capacity",
+        "value": "256GB"
+      }
+    ],
+    "inventory": {
+      "quantity": 40,
+      "inStock": true
+    }
+  },
+  {
+    "name": "Sony Xperia 5 III",
+    "description": "Compact flagship with advanced camera technology.",
+    "price": 999,
+    "category": "Electronics",
+    "tags": ["smartphone", "Sony", "Android"],
+    "variants": [
+      {
+        "type": "Color",
+        "value": "Black"
+      },
+      {
+        "type": "Storage Capacity",
+        "value": "128GB"
+      }
+    ],
+    "inventory": {
+      "quantity": 30,
+      "inStock": true
+    }
+  },
+  {
+    "name": "Xiaomi Mi 11",
+    "description": "Affordable flagship with excellent performance and features.",
+    "price": 749,
+    "category": "Electronics",
+    "tags": ["smartphone", "Xiaomi", "Android"],
+    "variants": [
+      {
+        "type": "Color",
+        "value": "Horizon Blue"
+      },
+      {
+        "type": "Storage Capacity",
+        "value": "256GB"
+      }
+    ],
+    "inventory": {
+      "quantity": 90,
+      "inStock": true
+    }
+  },
+  {
+    "name": "Huawei P40 Pro",
+    "description": "Powerful hardware with advanced camera system.",
+    "price": 899,
+    "category": "Electronics",
+    "tags": ["smartphone", "Huawei", "Android"],
+    "variants": [
+      {
+        "type": "Color",
+        "value": "Silver Frost"
+      },
+      {
+        "type": "Storage Capacity",
+        "value": "256GB"
+      }
+    ],
+    "inventory": {
+      "quantity": 20,
+      "inStock": true
+    }
+  },
+  {
+    "name": "LG V60 ThinQ",
+    "description": "Dual screen support with powerful performance.",
+    "price": 799,
+    "category": "Electronics",
+    "tags": ["smartphone", "LG", "Android"],
+    "variants": [
+      {
+        "type": "Color",
+        "value": "Classy Blue"
+      },
+      {
+        "type": "Storage Capacity",
+        "value": "128GB"
+      }
+    ],
+    "inventory": {
+      "quantity": 35,
+      "inStock": true
+    }
+  },
+  {
+    "name": "Asus ROG Phone 5",
+    "description": "Ultimate gaming smartphone with advanced cooling system.",
+    "price": 999,
+    "category": "Electronics",
+    "tags": ["smartphone", "Asus", "Gaming"],
+    "variants": [
+      {
+        "type": "Color",
+        "value": "Phantom Black"
+      },
+      {
+        "type": "Storage Capacity",
+        "value": "256GB"
+      }
+    ],
+    "inventory": {
+      "quantity": 25,
+      "inStock": true
+    }
+  },
+  {
+    "name": "Oppo Find X3 Pro",
+    "description": "Premium smartphone with innovative camera and design.",
+    "price": 1099,
+    "category": "Electronics",
+    "tags": ["smartphone", "Oppo", "Android"],
+    "variants": [
+      {
+        "type": "Color",
+        "value": "Gloss Black"
+      },
+      {
+        "type": "Storage Capacity",
+        "value": "256GB"
+      }
+    ],
+    "inventory": {
+      "quantity": 45,
+      "inStock": true
+    }
+  }
+]
