@@ -7,6 +7,14 @@ const app: Application = express();
 // GLOBAL MIDDLEWARES
 app.use(express.json());
 
+// WELCOME ROUTE
+app.get('/', (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'Welcome to our e_commerce!!!!',
+  });
+});
+
 // ROUTES
 app.use('/api/products', productRouter);
 app.use('/api/orders', orderRouter);
