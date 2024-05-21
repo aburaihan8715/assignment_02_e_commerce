@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { productService } from './product.service';
 import productZodSchema from './product.validation';
+import { ZodError } from 'zod';
 
 const createAProduct = async (req: Request, res: Response) => {
   try {
@@ -16,12 +17,27 @@ const createAProduct = async (req: Request, res: Response) => {
       message: 'Product created successfully',
       data: newProduct,
     });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: 'Something went wrong!!',
-      error: error,
-    });
+  } catch (error: unknown) {
+    if (error instanceof ZodError) {
+      // Handle Zod validation errors specifically
+      res.status(400).json({
+        success: false,
+        message: 'Validation error',
+        errors: error.errors,
+      });
+    } else if (error instanceof Error) {
+      // Handle general errors
+      res.status(500).json({
+        success: false,
+        message: error.message,
+      });
+    } else {
+      // Fallback for unknown errors
+      res.status(500).json({
+        success: false,
+        message: 'Something went wrong!!',
+      });
+    }
   }
 };
 
@@ -29,7 +45,7 @@ const getAProduct = async (req: Request, res: Response) => {
   const product = await productService.getAProductFromDB(req.params.productId);
 
   if (!product) {
-    throw new Error(`No product found this ID: ${req.params.productId}`);
+    throw new Error(`No product found with this ID: ${req.params.productId}`);
   }
 
   try {
@@ -38,11 +54,20 @@ const getAProduct = async (req: Request, res: Response) => {
       message: 'Product retrieved successfully',
       data: product,
     });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      error: error,
-    });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      res.status(500).json({
+        success: false,
+        message: error?.message,
+        error: error,
+      });
+    } else {
+      // Fallback for unknown errors
+      res.status(500).json({
+        success: false,
+        message: 'Something went wrong!!',
+      });
+    }
   }
 };
 
@@ -70,11 +95,20 @@ const getAllProducts = async (req: Request, res: Response) => {
       message: 'Products retrieved successfully',
       data: products,
     });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      error: error,
-    });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      res.status(500).json({
+        success: false,
+        message: error?.message,
+        error: error,
+      });
+    } else {
+      // Fallback for unknown errors
+      res.status(500).json({
+        success: false,
+        message: 'Something went wrong!!',
+      });
+    }
   }
 };
 
@@ -85,7 +119,7 @@ const updateAProduct = async (req: Request, res: Response) => {
   );
 
   if (!updatedProduct) {
-    throw new Error(`No product found this ID: ${req.params.productId}`);
+    throw new Error(`No product found with this ID: ${req.params.productId}`);
   }
 
   try {
@@ -94,11 +128,20 @@ const updateAProduct = async (req: Request, res: Response) => {
       message: 'Product updated successfully',
       data: updatedProduct,
     });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      error: error,
-    });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      res.status(500).json({
+        success: false,
+        message: error?.message,
+        error: error,
+      });
+    } else {
+      // Fallback for unknown errors
+      res.status(500).json({
+        success: false,
+        message: 'Something went wrong!!',
+      });
+    }
   }
 };
 
@@ -109,7 +152,7 @@ const deleteAProduct = async (req: Request, res: Response) => {
     );
 
     if (!deletedProduct) {
-      throw new Error(`No product found this ID: ${req.params.productId}`);
+      throw new Error(`No product found with this ID: ${req.params.productId}`);
     }
 
     res.status(200).json({
@@ -117,11 +160,20 @@ const deleteAProduct = async (req: Request, res: Response) => {
       message: 'Product deleted successfully',
       data: null,
     });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      error: error,
-    });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      res.status(500).json({
+        success: false,
+        message: error?.message,
+        error: error,
+      });
+    } else {
+      // Fallback for unknown errors
+      res.status(500).json({
+        success: false,
+        message: 'Something went wrong!!',
+      });
+    }
   }
 };
 
