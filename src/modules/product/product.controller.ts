@@ -58,7 +58,7 @@ const getAProduct = async (req: Request, res: Response) => {
     if (error instanceof Error) {
       res.status(500).json({
         success: false,
-        message: error?.message,
+        message: error.message,
         error: error,
       });
     } else {
@@ -99,7 +99,7 @@ const getAllProducts = async (req: Request, res: Response) => {
     if (error instanceof Error) {
       res.status(500).json({
         success: false,
-        message: error?.message,
+        message: error.message,
         error: error,
       });
     } else {
@@ -132,7 +132,7 @@ const updateAProduct = async (req: Request, res: Response) => {
     if (error instanceof Error) {
       res.status(500).json({
         success: false,
-        message: error?.message,
+        message: error.message,
         error: error,
       });
     } else {
@@ -164,7 +164,7 @@ const deleteAProduct = async (req: Request, res: Response) => {
     if (error instanceof Error) {
       res.status(500).json({
         success: false,
-        message: error?.message,
+        message: error.message,
         error: error,
       });
     } else {

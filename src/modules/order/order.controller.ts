@@ -56,7 +56,7 @@ const getAllOrders = async (req: Request, res: Response) => {
     if (error instanceof Error) {
       res.status(500).json({
         success: false,
-        message: error?.message,
+        message: error.message,
         error: error,
       });
     } else {
