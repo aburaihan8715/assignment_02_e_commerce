@@ -45,13 +45,13 @@ const getAProduct = async (req: Request, res: Response) => {
   const product = await productService.getAProductFromDB(req.params.productId);
 
   if (!product) {
-    throw new Error(`No product found with this ID: ${req.params.productId}`);
+    throw new Error(`No product found!`);
   }
 
   try {
     res.status(200).json({
       success: true,
-      message: 'Product retrieved successfully',
+      message: 'Product fetched successfully!',
       data: product,
     });
   } catch (error: unknown) {
@@ -92,7 +92,7 @@ const getAllProducts = async (req: Request, res: Response) => {
     res.status(200).json({
       success: true,
       result: products.length,
-      message: 'Products retrieved successfully',
+      message: 'Products fetched successfully!',
       data: products,
     });
   } catch (error: unknown) {
@@ -119,7 +119,7 @@ const updateAProduct = async (req: Request, res: Response) => {
   );
 
   if (!updatedProduct) {
-    throw new Error(`No product found with this ID: ${req.params.productId}`);
+    throw new Error(`No product found!`);
   }
 
   try {
@@ -152,7 +152,7 @@ const deleteAProduct = async (req: Request, res: Response) => {
     );
 
     if (!deletedProduct) {
-      throw new Error(`No product found with this ID: ${req.params.productId}`);
+      throw new Error(`No product found!`);
     }
 
     res.status(200).json({

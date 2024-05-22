@@ -23,7 +23,7 @@ app.use('/api/orders', orderRouter);
 app.all('*', (req, res) => {
   res.status(404).json({
     success: false,
-    error: `${req.originalUrl} not found!!`,
+    error: `Route not found!!`,
   });
 });
 
