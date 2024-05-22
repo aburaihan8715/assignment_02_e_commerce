@@ -9,7 +9,7 @@ const createAProduct = async (req: Request, res: Response) => {
     const newProduct = await productService.createAProductIntoDB(zodParsedData);
 
     if (!newProduct) {
-      throw new Error('Failed to create product! Try again later');
+      throw new Error('Failed to create product! Try again!');
     }
 
     res.status(201).json({
