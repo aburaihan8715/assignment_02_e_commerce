@@ -45,9 +45,9 @@ product quantity will be decreased by one and if product quantity is equal zero 
 
 ```js
 {
+    "start": "node ./dist/server.js",
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
-    "prod": "node ./dist/server.js",
-    "start": "nodemon ./dist/server.js",
+    "prod": "nodemon ./dist/server.js",
     "build": "tsc",
     "lint": "npx eslint src --ignore-pattern .ts",
     "lint:fix": "npx eslint src --fix",
