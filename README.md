@@ -31,3 +31,19 @@ Desc: We can get orders based on the email address
 POST➡ api/orders
 Desc: We can create new orders using this route, during creation of new orders
 product quantity will be decreased by one and if product quantity is equal zero it will throw an error.
+
+### scripts
+
+```js
+{
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "prod": "node ./dist/server.js",
+    "start": "nodemon ./dist/server.js",
+    "build": "tsc",
+    "lint": "npx eslint src --ignore-pattern .ts",
+    "lint:fix": "npx eslint src --fix",
+    "prettier": "prettier --ignore-path .gitignore --write \"./src/**/*.+(js|ts|json)\"",
+    "prettier:fix": "npx prettier --write src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+```
