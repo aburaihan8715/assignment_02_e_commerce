@@ -1,4 +1,5 @@
 import express, { Application } from 'express';
+import cors from 'cors';
 import { productRouter } from './modules/product/product.route';
 import { orderRouter } from './modules/order/order.route';
 
@@ -6,6 +7,7 @@ const app: Application = express();
 
 // GLOBAL MIDDLEWARES
 app.use(express.json());
+app.use(cors());
 
 // WELCOME ROUTE
 app.get('/', (req, res) => {
